@@ -44,18 +44,22 @@ class PengaduanController extends Controller
             'foto'              => 'required',
             'status'            => 'required'
         ]);
+            
+        // Pengaduan::create([
+        //     'tgl_pengaduan'     => $request->tgl_pengaduan,
+        //     'masyarakat_nik'    => $request->masyarakat_nik,
+        //     'judul_pengaduan'   => $request->judul_pengaduan,
+        //     'isi_laporan'       => $request->isi_laporan,
+        //     'foto'              => $request->foto,
+        //     'status'            => $request->status
+        // ]);
 
-        $imgName = $request->foto->getClientOriginalName() . '-' . time() . '.' . $request->foto->extension();
-        $request->foto->move(public_path('image'), $imgName);
-
-        Pengaduan::create([
-            'tgl_pengaduan'     => $request->tgl_pengaduan,
-            'masyarakat_nik'    => $request->masyarakat_nik,
-            'judul_pengaduan'   => $request->judul_pengaduan,
-            'isi_laporan'       => $request->isi_laporan,
-            'foto'              => $imgName,
-            'status'            => $request->status
-        ]);
+        $pengaduan = Pengaduan::create($request->all());
+        if($request->hasFile('foto')) {
+            $request->file('foto')->move('images/',$request->file('foto')->getClientOriginalName());
+            $pengaduan->foto = $request->file('foto')->getClientOriginalName();
+            $pengaduan->save();
+        }
 
         return redirect('/pengaduan');
     }

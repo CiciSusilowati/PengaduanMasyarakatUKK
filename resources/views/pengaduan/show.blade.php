@@ -51,10 +51,8 @@
                               <label for="foto" class="col-sm-2 col-form-label">Foto</label>
                                 <div class="col-sm-10">
                                   <b>:</b> 
-                                  @if ($pengaduan->foto)
-                                      <img src="{{ asset('image/'. $pengaduan->foto) }}" height="60%" width="30%" alt="Foto Pengaduan" class="embed-responsive">
-                                  @else
-                                      <a href="#" class="badge badge-danger">Tidak Ada Foto</a>
+                                  {{ $pengaduan->foto }}
+                                      <img src="{{ url('/foto/'.$pengaduan->foto) }}" style="width:80px;"  alt="">
                                 </div>
                             </div>
 

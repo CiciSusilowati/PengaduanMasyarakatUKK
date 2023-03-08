@@ -13,11 +13,8 @@
                      Tambah Data 
                 </div>
                 <div class="card-body">
-                    <a href="/pengaduan" class="btn btn-primary">Kembali</a>
-                    <br/>
-                    <br/>
                     
-                    <form method="post" action="/pengaduan/store">
+                    <form method="post" action="/pengaduan/store" enctype="multipart/form-data">
  
                         {{ csrf_field() }}
  
@@ -65,9 +62,10 @@
                             @endif
                         </div>
 
-                        <div class="form-group">
-                            <label for="foto" class="form-label">Foto</label>
-                            <input type="file" name="foto" class="form-control">
+                        <label for="foto" class="form-label">Foto</label>
+                        <div class="input-group mb-3">
+                            <input type="file" name="foto" class="form-control" id="inputGroupfile">
+                            <label for="inputGroupfile" class="input-group-text">Upload</label>
                         </div>
 
                         <div class="form-group">
@@ -81,6 +79,8 @@
                         <div class="form-group">
                             <input type="submit" class="btn btn-success" value="Simpan">
                         </div>
+
+                        <a href="/pengaduan" class="btn btn-primary">Kembali</a>
  
                     </form>
  

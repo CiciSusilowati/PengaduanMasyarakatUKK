@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
-        <title>Edit Data Pengaduan</title>
+        <title>Edit Data Tanggapan</title>
     </head>
     <body>
         <div class="container">
@@ -14,18 +14,18 @@
                 </div>
                 <div class="card-body">
  
-                    <form method="post" action="/tanggapan/update/{{ $tanggapan->id }}">
+                    <form method="get" action="/tanggapan/update/{{ $tanggapan->id }}">
  
                         {{ csrf_field() }}
                         {{ method_field('get') }}
  
                         <div class="form-group">
                             <label>Aduan</label>
-                            <input type="string" name="pengadaun_id" class="form-control" value="{{ $tanggapan->pengadaun_id }}"> 
+                            <input type="string" name="pengaduan_id" class="form-control" value="{{ $tanggapan->pengaduan_id }}"> 
  
-                            @if($errors->has('pengadaun_id'))
+                             @if($errors->has('pengaduan_id'))
                                 <div class="text-danger">
-                                    {{ $errors->first('pengadaun_id')}}
+                                    {{ $errors->first('pengaduan_id')}}
                                 </div>
                             @endif
                         </div>

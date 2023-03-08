@@ -14,7 +14,7 @@
                 </div>
                 <div class="card-body">
  
-                    <form method="post" action="/pengaduan/update/{{ $pengaduan->id }}">
+                    <form method="get" action="/pengaduan/update/{{ $pengaduan->id }}">
  
                         {{ csrf_field() }}
                         {{ method_field('get') }}
@@ -54,7 +54,7 @@
 
                         <div class="form-group">
                             <label>Isi Laporan</label>
-                            <textarea name="isi_laporan" class="form-control">{{ $pengaduan->isi_laporan }}</textarea> 
+                            <textarea name="isi_laporan" class="form-control" value="{{ $pengaduan->isi_laporan }}"></textarea> 
  
                              @if($errors->has('isi_laporan'))
                                 <div class="text-danger">
@@ -64,8 +64,11 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Foto</label>
-                            <input type="file" name="foto" class="form-control" value="{{ $pengaduan->foto }}"> 
+                        <label for="foto" class="form-label">Foto</label>
+                        <div class="input-group mb-3">
+                            <input type="file" name="foto" class="form-control" id="inputGroupfile">
+                            <label for="inputGroupfile" class="input-group-text">Upload</label>
+                        </div> 
  
                              @if($errors->has('foto'))
                                 <div class="text-danger">
@@ -75,9 +78,11 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Status</label>
-                            <input type="radio" value="Proses"> Proses
-                            <input type="radio" value="Selesai"> Selesai
+                        <label for="exampleFormControlInput1" class="form-label">Status</label>
+                        <select name="status" class="form-control" id="exampleFormControlSelect1">
+                                <option value="Proses">Selesai</option>
+                                <option value="Selesai">Proses</option>
+                        </select>
                            
                              @if($errors->has('status'))
                                 <div class="text-danger">

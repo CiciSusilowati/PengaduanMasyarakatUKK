@@ -14,9 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('dashboard');
+// });
+
+Route::get('/', 'DashboardController@index');
 
 // pengaduan
 Route::get('/pengaduan', 'PengaduanController@index');
