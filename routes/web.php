@@ -14,11 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('dashboard');
+// Route::get('/halamandepan', function () {
+//     return view('halamandepan');
 // });
 
-Route::get('/', 'DashboardController@index');
+Route::get('/dashboard', 'DashboardController@index');
 
 // pengaduan
 Route::get('/pengaduan', 'PengaduanController@index');
