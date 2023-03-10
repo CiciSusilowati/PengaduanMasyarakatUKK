@@ -71,8 +71,8 @@
                         <div class="form-group">
                         <label for="exampleFormControlInput1" class="form-label">Status</label>
                         <select name="status" class="form-control" id="exampleFormControlSelect1">
-                                <option value="Proses">Selesai</option>
-                                <option value="Selesai">Proses</option>
+                                <option value="Proses">Proses</option>
+                                <option value="Selesai">Selesai</option>
                         </select>
                         </div>
                     

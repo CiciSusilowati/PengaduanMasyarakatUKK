@@ -16,9 +16,18 @@ class CreateMasyarakatsTable extends Migration
         Schema::create('masyarakats', function (Blueprint $table) {
             $table->bigIncrements('nik');
             $table->string('nama');
-            $table->string('username');
+            $table->string('email');
             $table->string('password');
             $table->string('tlp');
+            $table->enum('jenkel', ['laki-laki', 'perempuan']);
+            $table->text('alamat');
+            $table->string('rt');
+            $table->string('rw');
+            $table->string('kode_pos');
+            $table->string('province_id');
+            $table->string('regency_id');
+            $table->string('district_id');
+            $table->string('village_id');
             $table->timestamps();
         });
     }
