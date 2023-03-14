@@ -14,9 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/halamandepan', function () {
-//     return view('halamandepan');
-// });
+Route::get('/login', function () {
+    return view('pengguna.login');
+});
+
+Route::post('postlogin', 'LoginController@postlogin')->name('postlogin');
 
 Route::get('/dashboard', 'DashboardController@index');
 
