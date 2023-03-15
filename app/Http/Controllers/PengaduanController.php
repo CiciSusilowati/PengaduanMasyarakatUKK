@@ -39,7 +39,6 @@ class PengaduanController extends Controller
         $this->validate($request,[
             'tgl_pengaduan'     => 'required',
             'masyarakat_nik'    => 'required',
-            'judul_pengaduan'   => 'required',
             'isi_laporan'       => 'required',
             'foto'              => 'required',
             'status'            => 'required'
@@ -48,7 +47,6 @@ class PengaduanController extends Controller
         // Pengaduan::create([
         //     'tgl_pengaduan'     => $request->tgl_pengaduan,
         //     'masyarakat_nik'    => $request->masyarakat_nik,
-        //     'judul_pengaduan'   => $request->judul_pengaduan,
         //     'isi_laporan'       => $request->isi_laporan,
         //     'foto'              => $request->foto,
         //     'status'            => $request->status
@@ -100,7 +98,6 @@ class PengaduanController extends Controller
         $this->validate($request,[
             'tgl_pengaduan'   => 'required',
             'masyarakat_nik'  => 'required',
-            'judul_pengaduan' => 'required',
             'isi_laporan'     => 'required',
             'foto'            => 'required',
             'status'          => 'required'
@@ -109,7 +106,6 @@ class PengaduanController extends Controller
         $pengaduan = Pengaduan::find($id);
         $pengaduan->tgl_pengaduan   = $request->tgl_pengaduan;
         $pengaduan->masyarakat_nik  = $request->masyarakat_nik;
-        $pengaduan->judul_pengaduan = $request->judul_pengaduan;
         $pengaduan->isi_laporan     = $request->isi_laporan;
         $pengaduan->foto            = $request->foto;
         $pengaduan->status          = $request->status;

@@ -20,7 +20,7 @@ Route::get('/login', function () {
 
 Route::post('postlogin', 'LoginController@postlogin')->name('postlogin');
 
-Route::get('/dashboard', 'DashboardController@index');
+Route::get('/', 'DashboardController@index');
 
 // pengaduan
 Route::get('/pengaduan', 'PengaduanController@index');

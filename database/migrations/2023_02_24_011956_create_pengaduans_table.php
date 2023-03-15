@@ -17,7 +17,6 @@ class CreatePengaduansTable extends Migration
             $table->bigIncrements('id');
             $table->date('tgl_pengaduan');
             $table->integer('masyarakat_nik');
-            $table->string('judul_pengaduan');
             $table->text('isi_laporan');
             $table->string('foto');
             $table->enum('status', ['Proses', 'Selesai']);
