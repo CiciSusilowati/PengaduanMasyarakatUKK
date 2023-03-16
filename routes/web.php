@@ -20,7 +20,7 @@ Route::get('/login', function () {
 
 Route::post('postlogin', 'LoginController@postlogin')->name('postlogin');
 
-Route::get('/', 'DashboardController@index');
+Route::get('/dashboard', 'DashboardController@index');
 
 // pengaduan
 Route::get('/pengaduan', 'PengaduanController@index');
@@ -40,8 +40,5 @@ Route::get('/tanggapan/update/{id}', 'TanggapanController@update');
 Route::get('/tanggapan/edit/{id}', 'TanggapanController@edit');
 Route::get('/tanggapan/hapus/{id}', 'TanggapanController@delete');
 
-// masyarakat
-Route::get('/masyarakat', 'MasyarakatController@index');
-Route::get('/masyarakat/tambah', 'MasyarakatController@tambah');
-Route::post('/masyarakat/store', 'MasyarakatController@store');
+
 
