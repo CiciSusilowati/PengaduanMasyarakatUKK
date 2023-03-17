@@ -19,6 +19,7 @@ Route::get('/login', function () {
 });
 
 Route::post('postlogin', 'LoginController@postlogin')->name('postlogin');
+Route::get('/register', 'RegisterController@index');
 
 Route::get('/dashboard', 'DashboardController@index');
 
