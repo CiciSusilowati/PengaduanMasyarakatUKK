@@ -13,7 +13,7 @@
 @include('halamandepan.navbar')
 <!-- End Navbar -->
     
-      <!-- <div class="row mt-4">
+      <div class="row mt-4">
         <div class="col-lg-7 mb-lg-0 mb-4">
           <div class="card z-index-2 h-100">
             <div class="card-header pb-0 pt-3 bg-transparent">
@@ -29,12 +29,11 @@
               </div>
             </div>
           </div>
-      </div> -->
+      </div>
        
       
     
-    </div>
-  </main>
+    
   <div class="fixed-plugin">
     <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
       <i class="fa fa-cog py-2"> </i>
